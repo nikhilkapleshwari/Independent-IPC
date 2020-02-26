@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package io.common.ipc;
+
+option java_multiple_files=true;
+
+service Messenger{
+	rpc process(RequestMsg) returns (ResponseMsg) {}
+}
+
+message RequestMsg{
+	string 	key					=	1;
+	int32	messageType			=	2;
+	string	message				=	3;
+}
+
+message ResponseMsg{
+	string 	key					=	1;
+	int32	messageType			=	2;
+	int32	code				=	3;
+	string	message				=	4;
+	string  errorDescription 	=	5;
+}
