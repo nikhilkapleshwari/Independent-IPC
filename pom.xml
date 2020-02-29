@@ -148,7 +148,8 @@
 								<review.team>qa</review.team>
 							</deployProperties>
 							<publisher>
-								<contextUrl>http://localhost:8082/artifactory/libs-snapshot/</contextUrl>
+								<!-- <contextUrl>http://localhost:8082/artifactory/libs-snapshot/</contextUrl> -->
+								<contextUrl>http://localhost:8082/artifactory</contextUrl>
 								<username>admin</username>
 								<password>Password@12345</password>
 								<repoKey>libs-snapshot</repoKey>
