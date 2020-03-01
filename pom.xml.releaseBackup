@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.independent.developer</groupId>
 	<artifactId>independent-ipc</artifactId>
-	<version>1.2.2</version>
+	<version>1.2.2-SNAPSHOT</version>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -19,7 +19,7 @@
 	<scm>
 		<connection>scm:git:https://github.com/nikhilkapleshwari/Independent-IPC.git</connection>
 		<developerConnection>scm:git:https://github.com/nikhilkapleshwari/Independent-IPC.git</developerConnection>
-		<tag>v1.2.2</tag>
+		<tag>V1.2.0</tag>
 	</scm>
 
 	<dependencyManagement>
@@ -97,9 +97,18 @@
 			<name>libs-release</name>
 			<url>http://localhost:8082/artifactory/libs-release/</url>
 		</repository>
-		<!-- <repository> <id>libs-snapshots</id> <name>libs-snapshots</name> <url>http://localhost:8082/artifactory/libs-snapshot/</url> 
-			<releases> <enabled>false</enabled> </releases> <snapshots> <enabled>true</enabled> 
-			<updatePolicy>interval:1</updatePolicy> </snapshots> </repository> -->
+		<!-- <repository>
+			<id>libs-snapshots</id>
+			<name>libs-snapshots</name>
+			<url>http://localhost:8082/artifactory/libs-snapshot/</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>interval:1</updatePolicy>
+			</snapshots>
+		</repository> -->
 	</repositories>
 
 	<build>
@@ -164,18 +173,22 @@
 								<gradle>awesome</gradle>
 								<review.team>qa</review.team>
 							</deployProperties>
-							<publisher>
+							<!-- <publisher>
 								<contextUrl>http://localhost:8082/artifactory/libs-snapshot/</contextUrl>
 								<contextUrl>http://localhost:8082/artifactory</contextUrl>
 								<username>admin</username>
 								<password>Password@12345</password>
 								<repoKey>libs-snapshot</repoKey>
 								<snapshotRepoKey>libs-snapshot</snapshotRepoKey>
+							</publisher> -->
+							<publisher>
+								<!-- <contextUrl>http://localhost:8082/artifactory/libs-snapshot/</contextUrl> -->
+								<contextUrl>http://localhost:8082/artifactory</contextUrl>
+								<username>admin</username>
+								<password>Password@12345</password>
+								<repoKey>libs-release</repoKey>
+								<releaseRepoKey>libs-release</releaseRepoKey>
 							</publisher>
-							<!-- <publisher> <contextUrl>http://localhost:8082/artifactory/libs-snapshot/</contextUrl> 
-								<contextUrl>http://localhost:8082/artifactory</contextUrl> <username>admin</username> 
-								<password>Password@12345</password> <repoKey>libs-release</repoKey> <releaseRepoKey>libs-release</releaseRepoKey> 
-								</publisher> -->
 						</configuration>
 					</execution>
 				</executions>
@@ -202,11 +215,11 @@
 		</plugins>
 	</build>
 
-	<distributionManagement>
-		<repository>
-			<id>myRepoId</id>
-			<name>releaseReporsitory</name>
-			<url>http://localhost:8082/artifactory/libs-release/</url>
-		</repository>
-	</distributionManagement>
+ <distributionManagement>
+    <repository>
+      <id>myRepoId</id>
+      <name>releaseReporsitory</name>
+      <url>http://localhost:8082/artifactory/libs-release/</url>
+    </repository>
+  </distributionManagement>
 </project>
