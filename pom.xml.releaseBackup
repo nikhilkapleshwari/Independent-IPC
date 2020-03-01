@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.independent.developer</groupId>
 	<artifactId>independent-ipc</artifactId>
-	<version>1.2.2-SNAPSHOT</version>
+	<version>1.2.1-SNAPSHOT</version>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -91,26 +91,6 @@
 		</pluginRepository>
 	</pluginRepositories>
 
-	<repositories>
-		<repository>
-			<id>libs-release</id>
-			<name>libs-release</name>
-			<url>http://localhost:8082/artifactory/libs-release/</url>
-		</repository>
-		<!-- <repository>
-			<id>libs-snapshots</id>
-			<name>libs-snapshots</name>
-			<url>http://localhost:8082/artifactory/libs-snapshot/</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-				<updatePolicy>interval:1</updatePolicy>
-			</snapshots>
-		</repository> -->
-	</repositories>
-
 	<build>
 		<extensions>
 			<extension>
@@ -173,21 +153,13 @@
 								<gradle>awesome</gradle>
 								<review.team>qa</review.team>
 							</deployProperties>
-							<!-- <publisher>
-								<contextUrl>http://localhost:8082/artifactory/libs-snapshot/</contextUrl>
-								<contextUrl>http://localhost:8082/artifactory</contextUrl>
-								<username>admin</username>
-								<password>Password@12345</password>
-								<repoKey>libs-snapshot</repoKey>
-								<snapshotRepoKey>libs-snapshot</snapshotRepoKey>
-							</publisher> -->
 							<publisher>
 								<!-- <contextUrl>http://localhost:8082/artifactory/libs-snapshot/</contextUrl> -->
 								<contextUrl>http://localhost:8082/artifactory</contextUrl>
 								<username>admin</username>
 								<password>Password@12345</password>
-								<repoKey>libs-release</repoKey>
-								<releaseRepoKey>libs-release</releaseRepoKey>
+								<repoKey>libs-snapshot</repoKey>
+								<snapshotRepoKey>libs-snapshot</snapshotRepoKey>
 							</publisher>
 						</configuration>
 					</execution>
