@@ -215,4 +215,11 @@
 		</plugins>
 	</build>
 
+ <distributionManagement>
+    <repository>
+      <id>myRepoId</id>
+      <name>releaseReporsitory</name>
+      <url>http://localhost:8082/artifactory/libs-release/</url>
+    </repository>
+  </distributionManagement>
 </project>
