@@ -36,7 +36,7 @@ public class CommunicationManager extends MessengerImplBase implements Communica
 	@Override
 	public void process(RequestMsg requestMsg,StreamObserver<ResponseMsg> requestObserver) {
 		
-		System.out.println("Request msg:"+requestMsg.getMessage());
+		System.out.println("Request message:"+requestMsg.getMessage());
 		
 		this.receiverListener.dispatchMsg(requestMsg.getKey(),requestMsg.getMessage(),requestMsg.getMessageType(),requestObserver);
 		
