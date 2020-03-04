@@ -146,7 +146,7 @@
 				</executions>
 			</plugin>
 
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.jfrog.buildinfo</groupId>
 				<artifactId>artifactory-maven-plugin</artifactId>
 				<version>2.7.0</version>
@@ -164,20 +164,16 @@
 							</deployProperties>
 							<publisher>
 								<contextUrl>http://localhost:8082/artifactory/libs-snapshot/</contextUrl>
-								<!-- <contextUrl>http://localhost:8082/artifactory/libs-release</contextUrl> -->
+								<contextUrl>http://localhost:8082/artifactory/libs-release</contextUrl>
 								<username>admin</username>
 								<password>Password@12345</password>
 								<repoKey>libs-snapshot</repoKey>
 								<snapshotRepoKey>libs-snapshot</snapshotRepoKey>
 							</publisher>
-							<!-- <publisher> <contextUrl>http://localhost:8082/artifactory/libs-snapshot/</contextUrl> 
-								<contextUrl>http://localhost:8082/artifactory</contextUrl> <username>admin</username> 
-								<password>Password@12345</password> <repoKey>libs-release</repoKey> <releaseRepoKey>libs-release</releaseRepoKey> 
-								</publisher> -->
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin> -->
 			<!-- ***************** Added for release plugin ********************* -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -185,6 +181,7 @@
 				<version>3.0.0-M1</version>
 				<configuration>
 					<tagNameFormat>v@{project.version}</tagNameFormat>
+					<tagBase>https://github.com/nikhilkapleshwari/Independent-IPC.git</tagBase>
 				</configuration>
 			</plugin>
 		</plugins>
